@@ -3,7 +3,7 @@ set -x
 mkdir LOCAL
 cd LOCAL
 brew tap davidchall/hep
-brew install wget coreutils root hepmc pythia8 lhapdf gsl automake zlib
+brew install wget coreutils root hepmc pythia8 lhapdf gsl automake zlib gfortran
 wget https://tmdlib.hepforge.org/downloads/tmdlib-2.2.01.tar.gz
 tar zxfv tmdlib-2.2.01.tar.gz
 ls 
