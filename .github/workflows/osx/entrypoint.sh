@@ -16,5 +16,5 @@ git clone https://gitlab.cern.ch/averbyts/cascade
 cd cascade
 git checkout CI
 autoreconf -fisv
-./configure  --with-hepmc=/usr/local --with-tmdlib=/usr/local --with-lhapdf=/usr/local --with-pythia8=/usr/local --with-gsl=/usr/local
+./configure  --with-hepmc=/usr/local --with-tmdlib=/usr/local --with-lhapdf=/usr/local --with-pythia8=/usr/local --with-zlib=/usr/local --with-gsl=/usr/local
 
