@@ -2,6 +2,14 @@
 set -x
 brew tap davidchall/hep
 brew install wget coreutils root hepmc pythia8 lhapdf gsl automake
+wget https://tmdlib.hepforge.org/downloads/tmdlib-2.2.01.tar.gz
+tar zxfv tmdlib-2.2.01.tar.gz
+ls 
+cd tmdlib-2.2.01
+./configure 
+make -j 2 
+make install
+cd ..
 git clone https://gitlab.cern.ch/averbyts/cascade
 cd cascade
 git checkout CI
