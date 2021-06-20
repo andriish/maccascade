@@ -1,0 +1,21 @@
+name: build
+on:
+ push:
+ pull_request:
+ schedule:
+#Every 5 days at midnight 
+    - cron:  "0 0 1/5 * *"
+
+jobs:
+  
+  compilejobOSX:
+    runs-on: macos-latest
+    name: cascade_on_OSX
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Compile
+      id: compile
+      run: ./.github/workflows/osx/entrypoint.sh
+    - name: Get the output status
+      run: exit ${{ steps.compile.outputs.out }}
