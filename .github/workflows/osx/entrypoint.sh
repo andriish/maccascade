@@ -4,6 +4,14 @@ mkdir LOCAL
 cd LOCAL
 brew tap davidchall/hep
 brew install wget coreutils root hepmc pythia8 lhapdf gsl autoconf automake libtool  zlib gcc
+export PATH=$PATH:/usr/locl/bin
+which -a gfortran
+ which gfortran-11
+ if [ "$?" = "0" ]; then 
+   export FC=gfortran-11
+ else
+   export FC=gfortran
+ fi
 wget https://tmdlib.hepforge.org/downloads/tmdlib-2.2.01.tar.gz
 tar zxfv tmdlib-2.2.01.tar.gz
 ls 
