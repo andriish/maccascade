@@ -5,6 +5,7 @@ AC_CONFIG_MACRO_DIR([m4])
 
 AC_INIT([TMDlib],TMDLIB_VERSION_NUMBER, [hannes.jung@desy.de])
 AM_INIT_AUTOMAKE
+AC_PROG_FC([gfortran])
 AC_PROG_F77([gfortran])
 AC_PROG_CXX([g++]) 
 AM_PROG_AR
