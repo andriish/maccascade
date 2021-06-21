@@ -10,7 +10,6 @@ brew install gsl
 brew install gnu-sed
 brew install gcc
 brew install --build-from-source lhapdf
-brew install pythia8 
 brew install zlib 
 brew install autoconf 
 brew install automake 
@@ -26,6 +25,14 @@ which -a gfortran
  fi
 export CXXFLAGS=-std=c++14
 cp /usr/local/bin/gfortran-9 /usr/local/bin/gfortran
+
+wget https://pythia.org/download/pythia82/pythia8243.tgz
+tar zxfv pythia8243.tgz
+./configure  --enable-shared --with-hepmc2=/usr/local      --with-lhapdf6=/usr/local
+make
+make install
+cd ..
+
 wget https://tmdlib.hepforge.org/downloads/tmdlib-2.2.01.tar.gz
 tar zxfv tmdlib-2.2.01.tar.gz
 ls 
