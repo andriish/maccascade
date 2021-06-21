@@ -16,7 +16,9 @@ brew install automake
 brew install libtool 
 brew install pkg-config
 brew install --cask basictex
+eval "$(/usr/libexec/path_helper)"
 export PATH=$PATH:/usr/local/bin:/usr/local//Cellar/gcc/11.1.0_1/libexec/gcc/x86_64-apple-darwin19/11.1.0/:/Library/TeX/texbin/
+
 which -a gfortran
  find /usr/local/ -name f951
  which gfortran-11
