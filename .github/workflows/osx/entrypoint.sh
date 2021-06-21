@@ -21,8 +21,10 @@ which -a gfortran
  which gfortran-11
  if [ "$?" = "0" ]; then 
    export FC=gfortran-11
+   export F77=gfortran-11
  else
    export FC=gfortran
+   export F77=gfortran
  fi
 export CXXFLAGS=-std=c++14
 cp /usr/local/bin/gfortran-11 /usr/local/bin/gfortran
@@ -33,10 +35,10 @@ wget https://tmdlib.hepforge.org/downloads/tmdlib-2.2.01.tar.gz
 tar zxfv tmdlib-2.2.01.tar.gz
 ls 
 cd tmdlib-2.2.01
-rm -f configure.ac
-cp $TOP/tmdlib/configure.ac ./
-autoupdate
-autoreconf -fisv
+#rm -f configure.ac
+#cp $TOP/tmdlib/configure.ac ./
+#autoupdate
+#autoreconf -fisv
 ./configure --with-lhapdf=/usr/local
 make -j 2 
 make install
