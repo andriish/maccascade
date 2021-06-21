@@ -48,3 +48,5 @@ git checkout CI
 autoreconf -fisv
 ./configure  --with-hepmc=/usr/local --with-tmdlib=/usr/local --with-lhapdf=/usr/local --with-zlib=/usr/local/opt/zlib --with-gsl=/usr/local
 #--with-pythia8=/usr/local 
+
+make -j 2
