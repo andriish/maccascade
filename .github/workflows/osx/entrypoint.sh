@@ -3,7 +3,9 @@ set -x
 mkdir LOCAL
 cd LOCAL
 brew tap davidchall/hep
-brew install wget coreutils  hepmc pythia8  
+brew install wget coreutils  
+brew install hepmc 
+brew install pythia8  
 brew install gsl
 brew install gnu-sed
 brew install gcc
@@ -29,6 +31,7 @@ ls
 cd tmdlib-2.2.01
 gsed  -i "s/AC_FC_WRAPPERS//g" configure.ac
 gsed  -i "s/AC_F77_WRAPPERS//g" configure.ac
+autoupdate
 autoreconf -fisv
 ./configure --with-lhapdf=/usr/local
 make -j 2 
