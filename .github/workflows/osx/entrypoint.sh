@@ -21,6 +21,7 @@ which -a gfortran
  else
    export FC=gfortran
  fi
+cp /usr/local/bin/gfortran-11 /usr/local/bin/gfortran
 wget https://tmdlib.hepforge.org/downloads/tmdlib-2.2.01.tar.gz
 tar zxfv tmdlib-2.2.01.tar.gz
 ls 
