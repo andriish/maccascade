@@ -43,8 +43,8 @@ brew install root
 git clone https://gitlab.cern.ch/averbyts/cascade
 cd cascade
 git checkout CI
-gsed  -i "s/AC_FC_WRAPPERS//g" configure.ac
-gsed  -i "s/AC_F77_WRAPPERS//g" configure.ac
+#gsed  -i "s/AC_FC_WRAPPERS//g" configure.ac
+#gsed  -i "s/AC_F77_WRAPPERS//g" configure.ac
 autoreconf -fisv
 ./configure  --with-hepmc=/usr/local --with-tmdlib=/usr/local --with-lhapdf=/usr/local --with-zlib=/usr/local/opt/zlib --with-gsl=/usr/local
 #--with-pythia8=/usr/local 
