@@ -9,7 +9,7 @@ brew install pythia8
 brew install gsl
 brew install gnu-sed
 brew install gcc
-brew install lhapdf
+brew install --build-from-source lhapdf
 brew install zlib 
 brew install autoconf 
 brew install automake 
