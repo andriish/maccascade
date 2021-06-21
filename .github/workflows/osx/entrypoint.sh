@@ -1,5 +1,6 @@
 #!/bin/sh -l
 set -x
+export TOP=$(pwd)
 mkdir LOCAL
 cd LOCAL
 brew tap davidchall/hep
@@ -28,8 +29,8 @@ wget https://tmdlib.hepforge.org/downloads/tmdlib-2.2.01.tar.gz
 tar zxfv tmdlib-2.2.01.tar.gz
 ls 
 cd tmdlib-2.2.01
-gsed  -i "s/AC_FC_LIBRARY_LDFLAGS//g" configure.ac
-gsed  -i "s/AC_F77_LIBRARY_LDFLAGS//g" configure.ac
+rm -f configure.ac
+cp $TOP/tmdlib/configure.ac ./
 autoupdate
 autoreconf -fisv
 ./configure --with-lhapdf=/usr/local
