@@ -15,17 +15,17 @@ brew install autoconf
 brew install automake 
 brew install libtool 
 brew install pkg-config
-export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/usr/local/bin:/usr/local//Cellar/gcc/11.1.0_1/libexec/gcc/x86_64-apple-darwin19/11.1.0/
 which -a gfortran
  find /usr/local/ -name f951
- which gfortran-9
+ which gfortran-11
  if [ "$?" = "0" ]; then 
-   export FC=gfortran-9
+   export FC=gfortran-11
  else
    export FC=gfortran
  fi
 export CXXFLAGS=-std=c++14
-cp /usr/local/bin/gfortran-9 /usr/local/bin/gfortran
+cp /usr/local/bin/gfortran-11 /usr/local/bin/gfortran
 
 wget https://pythia.org/download/pythia82/pythia8243.tgz
 tar zxfv pythia8243.tgz
