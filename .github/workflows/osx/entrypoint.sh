@@ -15,13 +15,13 @@ brew install pkg-config
 export PATH=$PATH:/usr/local/bin
 ls /usr/local/bin
 which -a gfortran
- which gfortran-11
+ which gfortran-9
  if [ "$?" = "0" ]; then 
-   export FC=gfortran-11
+   export FC=gfortran-9
  else
    export FC=gfortran
  fi
-cp /usr/local/bin/gfortran-11 /usr/local/bin/gfortran
+cp /usr/local/bin/gfortran-9 /usr/local/bin/gfortran
 wget https://tmdlib.hepforge.org/downloads/tmdlib-2.2.01.tar.gz
 tar zxfv tmdlib-2.2.01.tar.gz
 ls 
