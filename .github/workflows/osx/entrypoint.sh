@@ -18,6 +18,7 @@ brew install pkg-config
 brew install --cask basictex
 eval "$(/usr/libexec/path_helper)"
 export PATH=$PATH:/usr/local/bin:/usr/local//Cellar/gcc/11.1.0_1/libexec/gcc/x86_64-apple-darwin19/11.1.0/:/Library/TeX/texbin/
+sudo tlmgr update --self
 sudo tlmgr install sectsty
 
 which -a gfortran
