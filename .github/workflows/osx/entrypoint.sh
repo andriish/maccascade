@@ -3,7 +3,7 @@ set -x
 mkdir LOCAL
 cd LOCAL
 brew tap davidchall/hep
-brew install wget coreutils  hepmc pythia8  gsl 
+brew install wget coreutils  hepmc pythia8  gsl gsed
 brew install --cask gfortran
 brew install gcc
 brew install lhapdf
@@ -33,8 +33,8 @@ cd ..
 git clone https://gitlab.cern.ch/averbyts/cascade
 cd cascade
 git checkout CI
-sed  -i 's/AC_FC_WRAPPERS//g' configure.ac
-sed  -i 's/AC_F77_WRAPPERS//g' configure.ac
+gsed  -i "s/AC_FC_WRAPPERS//g" configure.ac
+gsed  -i "s/AC_F77_WRAPPERS//g" configure.ac
 autoreconf -fisv
 ./configure  --with-hepmc=/usr/local --with-tmdlib=/usr/local --with-lhapdf=/usr/local --with-pythia8=/usr/local --with-zlib=/usr/local --with-gsl=/usr/local
 
