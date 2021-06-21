@@ -12,7 +12,7 @@ brew install automake
 brew install libtool 
 brew install pkg-config
 export PATH=$PATH:/usr/local/bin
-ls /usr/bin/local
+ls /usr/local/bin
 which -a gfortran
  which gfortran-11
  if [ "$?" = "0" ]; then 
