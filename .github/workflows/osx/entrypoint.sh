@@ -6,11 +6,11 @@ cd LOCAL
 brew tap davidchall/hep
 brew install wget coreutils  
 brew install hepmc 
-brew install pythia8  
 brew install gsl
 brew install gnu-sed
 brew install gcc
 brew install --build-from-source lhapdf
+brew install pythia8 
 brew install zlib 
 brew install autoconf 
 brew install automake 
