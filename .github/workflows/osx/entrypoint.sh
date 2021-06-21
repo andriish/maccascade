@@ -4,7 +4,7 @@ mkdir LOCAL
 cd LOCAL
 brew tap davidchall/hep
 brew install wget coreutils  hepmc pythia8  gsl gsed
-brew install --cask gfortran
+brew install gnu-sed
 brew install gcc
 brew install lhapdf
 brew install zlib 
