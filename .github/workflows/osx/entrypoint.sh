@@ -24,6 +24,7 @@ which -a gfortran
  else
    export FC=gfortran
  fi
+export CXXFLAGS=-std=c++14
 cp /usr/local/bin/gfortran-9 /usr/local/bin/gfortran
 wget https://tmdlib.hepforge.org/downloads/tmdlib-2.2.01.tar.gz
 tar zxfv tmdlib-2.2.01.tar.gz
