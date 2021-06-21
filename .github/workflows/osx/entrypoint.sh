@@ -3,8 +3,14 @@ set -x
 mkdir LOCAL
 cd LOCAL
 brew tap davidchall/hep
-brew install wget coreutils  hepmc pythia8 lhapdf gsl autoconf automake libtool  zlib gcc
-brew install autoconf automake libtool pkg-config
+brew install wget coreutils  hepmc pythia8  gsl 
+brew install gcc
+brew install lhapdf
+brew install zlib 
+brew install autoconf 
+brew install automake 
+brew install libtool 
+brew install pkg-config
 export PATH=$PATH:/usr/local/bin
 ls /usr/bin/local
 which -a gfortran
