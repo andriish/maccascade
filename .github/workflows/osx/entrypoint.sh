@@ -17,6 +17,7 @@ brew install libtool
 brew install pkg-config
 export PATH=$PATH:/usr/local/bin
 which -a gfortran
+ find /usr/local/ -name f951
  which gfortran-9
  if [ "$?" = "0" ]; then 
    export FC=gfortran-9
