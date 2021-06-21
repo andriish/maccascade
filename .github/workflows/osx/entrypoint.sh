@@ -29,6 +29,7 @@ cp /usr/local/bin/gfortran-9 /usr/local/bin/gfortran
 
 wget https://pythia.org/download/pythia82/pythia8243.tgz
 tar zxfv pythia8243.tgz
+cd pythia8243
 ./configure  --enable-shared --with-hepmc2=/usr/local      --with-lhapdf6=/usr/local
 make
 make install
