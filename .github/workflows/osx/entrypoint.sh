@@ -48,6 +48,7 @@ cd tmdlib-2.2.01
 make -j 2 
 make install
 cd ..
+brew install root
 git clone https://gitlab.cern.ch/averbyts/cascade
 cd cascade
 git checkout CI
