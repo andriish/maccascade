@@ -3,8 +3,9 @@ set -x
 mkdir LOCAL
 cd LOCAL
 brew tap davidchall/hep
-brew install wget coreutils root hepmc pythia8 lhapdf gsl autoconf automake libtool  zlib gcc
-export PATH=$PATH:/usr/locl/bin
+brew install wget coreutils  hepmc pythia8 lhapdf gsl autoconf automake libtool  zlib gcc
+export PATH=$PATH:/usr/local/bin
+ls /usr/bin/local
 which -a gfortran
  which gfortran-11
  if [ "$?" = "0" ]; then 
