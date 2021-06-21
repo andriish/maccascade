@@ -21,29 +21,20 @@ export PATH=$PATH:/usr/local/bin:/usr/local//Cellar/gcc/11.1.0_1/libexec/gcc/x86
 sudo tlmgr update --self
 sudo tlmgr install sectsty collection-fontsrecommended
 
-which -a gfortran
- find /usr/local/ -name f951
- which gfortran-11
- if [ "$?" = "0" ]; then 
+which gfortran-11
+if [ "$?" = "0" ]; then 
    export FC=gfortran-11
    export F77=gfortran-11
- else
+else
    export FC=gfortran
    export F77=gfortran
- fi
+fi
 export CXXFLAGS=-std=c++14
 cp /usr/local/bin/gfortran-11 /usr/local/bin/gfortran
 
-
-
 wget https://tmdlib.hepforge.org/downloads/tmdlib-2.2.01.tar.gz
-tar zxfv tmdlib-2.2.01.tar.gz
-ls 
+tar zxfv tmdlib-2.2.01.tar.gz 
 cd tmdlib-2.2.01
-#rm -f configure.ac
-#cp $TOP/tmdlib/configure.ac ./
-#autoupdate
-#autoreconf -fisv
 ./configure --with-lhapdf=/usr/local
 make -j 2 
 make install
@@ -54,7 +45,6 @@ cd cascade
 git checkout CI
 gsed  -i "s/AC_FC_WRAPPERS//g" configure.ac
 gsed  -i "s/AC_F77_WRAPPERS//g" configure.ac
-ls /usr/local/lib*/libpyth*
 autoreconf -fisv
 ./configure  --with-hepmc=/usr/local --with-tmdlib=/usr/local --with-lhapdf=/usr/local --with-zlib=/usr/local/opt/zlib --with-gsl=/usr/local
 #--with-pythia8=/usr/local 
