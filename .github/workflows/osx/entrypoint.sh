@@ -16,6 +16,7 @@ brew install autoconf
 brew install automake 
 brew install libtool 
 brew install pkg-config
+brew install --build-from-source pythia 
 brew install --cask basictex
 eval "$(/usr/libexec/path_helper)"
 export PATH=$PATH:/usr/local/bin:/usr/local//Cellar/gcc/11.1.0_1/libexec/gcc/x86_64-apple-darwin19/11.1.0/:/Library/TeX/texbin/
@@ -47,8 +48,7 @@ git checkout hepmc3
 gsed  -i "s/AC_FC_WRAPPERS//g" configure.ac
 gsed  -i "s/AC_F77_WRAPPERS//g" configure.ac
 autoreconf -fisv
-./configure --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc=/usr/local --with-hepmc3=/usr/local  --with-tmdlib=/usr/local --with-lhapdf=/usr/local --with-zlib=/usr/local/opt/zlib --with-gsl=/usr/local
-#--with-pythia8=/usr/local 
+./configure --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc=/usr/local --with-hepmc3=/usr/local  --with-tmdlib=/usr/local --with-lhapdf=/usr/local --with-zlib=/usr/local/opt/zlib --with-gsl=/usr/local --with-pythia8=/usr/local 
 make -j 2
 make install
 TMDlib-getdata PB-NLO-HERAI+II-2018-set2
