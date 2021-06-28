@@ -73,11 +73,14 @@ brew install root
 git clone https://gitlab.cern.ch/averbyts/cascade
 cd cascade
 git checkout hepmc3
-autoreconf -fisv
+#autoreconf -fisv
 #this will enable hepmc3 only if it is present
-./configure --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc=/usr/local --with-hepmc3=/usr/local  --with-tmdlib=/usr/local --with-lhapdf=/usr/local --with-zlib=/usr/local/opt/zlib --with-gsl=/usr/local --with-pythia8=/usr/local 
-make -j 2 LD=$LD
-make install LD=$LD
+#./configure --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc=/usr/local --with-hepmc3=/usr/local  --with-tmdlib=/usr/local --with-lhapdf=/usr/local --with-zlib=/usr/local/opt/zlib --with-gsl=/usr/local --with-pythia8=/usr/local 
+
+cmake -S. -Bbuild -DCMAKE_INSTALL_PREFIX=$(pwd)/TESTINSTALLDIR
+make -j 2 -C build
+make install -C build
+
 TMDlib-getdata PB-NLO-HERAI+II-2018-set2
 cp TESTINSTALLDIR/share/cascade/LHE/POWHEG-example.lhe ./
 export HEPMCOUT=output.hepmc
