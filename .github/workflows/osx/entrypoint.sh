@@ -5,17 +5,17 @@ mkdir LOCAL
 cd LOCAL
 brew tap davidchall/hep
 brew install wget coreutils  
-brew install hepmc 
-brew install hepmc3 
 brew install gsl
 brew install gnu-sed
 brew install gcc
-brew install --build-from-source lhapdf
 brew install zlib 
 brew install autoconf 
 brew install automake 
 brew install libtool 
 brew install pkg-config
+brew install --build-from-source lhapdf
+brew install --build-from-source hepmc 
+brew install --build-from-source hepmc3 
 brew install --build-from-source pythia 
 brew install --cask basictex
 eval "$(/usr/libexec/path_helper)"
@@ -46,11 +46,13 @@ git clone https://gitlab.cern.ch/averbyts/cascade
 cd cascade
 git checkout hepmc3
 autoreconf -fisv
+#this will enable hepmc3 only
 ./configure --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc=/usr/local --with-hepmc3=/usr/local  --with-tmdlib=/usr/local --with-lhapdf=/usr/local --with-zlib=/usr/local/opt/zlib --with-gsl=/usr/local --with-pythia8=/usr/local 
 make -j 2
 make install
 TMDlib-getdata PB-NLO-HERAI+II-2018-set2
 cp TESTINSTALLDIR/share/cascade/LHE/POWHEG-example.lhe ./
-TESTINSTALLDIR/bin/cascade < TESTINSTALLDIR//share/cascade/LHE/steering-DY-PH-hepmc23.txt
+export HEPMCOUT=output.hepmc
+TESTINSTALLDIR/bin/cascade < TESTINSTALLDIR//share/cascade/LHE/steering-DY-PH.txt
 head -n 40 output.hepmc*
 
