@@ -55,7 +55,7 @@ cd ..
 ###########
 wget https://gitlab.cern.ch/hepmc/HepMC/-/archive/2.06.11/HepMC-2.06.11.tar.gz
 tar zxfv HepMC-2.06.11.tar.gz
-cmake -SHepMC-2.06.11 -BbuildHepMC-2.06.11 -Dmomentum=GEV -Dlength=MM CMakeLists.txt
+cmake -SHepMC-2.06.11 -BbuildHepMC-2.06.11 -Dmomentum=GEV -Dlength=MM
 make -j 2 -C buildHepMC-2.06.11
 make install -C buildHepMC-2.06.11
 cd ..
@@ -75,8 +75,8 @@ git checkout hepmc3
 autoreconf -fisv
 #this will enable hepmc3 only if it is present
 ./configure --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc=/usr/local --with-hepmc3=/usr/local  --with-tmdlib=/usr/local --with-lhapdf=/usr/local --with-zlib=/usr/local/opt/zlib --with-gsl=/usr/local --with-pythia8=/usr/local 
-make -j 2
-make install
+make -j 2 LD=$LD
+make install LD=$LD
 TMDlib-getdata PB-NLO-HERAI+II-2018-set2
 cp TESTINSTALLDIR/share/cascade/LHE/POWHEG-example.lhe ./
 export HEPMCOUT=output.hepmc
