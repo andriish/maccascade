@@ -13,10 +13,10 @@ brew install autoconf
 brew install automake 
 brew install libtool 
 brew install pkg-config
-brew install --build-from-source lhapdf
-brew install --build-from-source hepmc 
-brew install --build-from-source hepmc3 
-brew install --build-from-source pythia 
+brew install --build-from-source --cc=gcc-11 lhapdf
+brew install --build-from-source --cc=gcc-11 hepmc 
+brew install --build-from-source --cc=gcc-11 hepmc3 
+brew install --build-from-source --cc=gcc-11 pythia 
 brew install --cask basictex
 eval "$(/usr/libexec/path_helper)"
 export PATH=$PATH:/usr/local/bin:/usr/local//Cellar/gcc/11.1.0_1/libexec/gcc/x86_64-apple-darwin19/11.1.0/:/Library/TeX/texbin/
@@ -25,9 +25,13 @@ sudo tlmgr install sectsty collection-fontsrecommended
 
 which gfortran-11
 if [ "$?" = "0" ]; then 
+   export CXX=g++-11
+   export CC=gcc-11
    export FC=gfortran-11
    export F77=gfortran-11
 else
+   export CXX=g++
+   export CC=gcc
    export FC=gfortran
    export F77=gfortran
 fi
