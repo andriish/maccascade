@@ -27,11 +27,13 @@ if [ "$?" = "0" ]; then
    export CC=gcc-11
    export FC=gfortran-11
    export F77=gfortran-11
+   export LD=gfortran-11
 else
    export CXX=g++
    export CC=gcc
    export FC=gfortran
    export F77=gfortran
+   export LD=gfortran
 fi
 export CXXFLAGS=-std=c++14
 cp /usr/local/bin/gfortran-11 /usr/local/bin/gfortran
