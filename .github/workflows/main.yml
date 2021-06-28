@@ -8,9 +8,21 @@ on:
 
 jobs:
   
-  compilejobOSX:
-    runs-on: macos-latest
-    name: cascade_on_OSX
+  compilejobOSX-10:
+    runs-on: macos-10.15
+    name: cascade_on_OSX10
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Compile
+      id: compile
+      run: ./.github/workflows/osx/entrypoint.sh
+    - name: Get the output status
+      run: exit ${{ steps.compile.outputs.out }}
+      
+  compilejobOSX-11:
+    runs-on: macos-11
+    name: cascade_on_OSX11
     steps:
     - name: Checkout
       uses: actions/checkout@v2
