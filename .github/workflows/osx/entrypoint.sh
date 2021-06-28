@@ -53,10 +53,9 @@ cd ..
 ###########
 wget https://gitlab.cern.ch/hepmc/HepMC/-/archive/2.06.11/HepMC-2.06.11.tar.gz
 tar zxfv HepMC-2.06.11.tar.gz
-cd HepMC-2.06.11
-cmake -Dmomentum=GEV -Dlength=MM CMakeLists.txt
-make -j 2
-make install 
+cmake -SHepMC-2.06.11 -BbuildHepMC-2.06.11 -Dmomentum=GEV -Dlength=MM CMakeLists.txt
+make -j 2 -C buildHepMC-2.06.11
+make install -C buildHepMC-2.06.11
 cd ..
 #############
 wget https://pythia.org/download/pythia82/pythia8243.tgz
