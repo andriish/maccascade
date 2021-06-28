@@ -64,7 +64,7 @@ cd ..
 wget https://pythia.org/download/pythia82/pythia8243.tgz
 tar zxfv pythia8243.tgz
 cd pythia8243
-./configure --refix=/usr/local --enable-shared
+./configure --prefix=/usr/local --enable-shared
 make -j 2
 make install
 cd ..
