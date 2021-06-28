@@ -77,7 +77,7 @@ git checkout cmake
 #this will enable hepmc3 only if it is present
 #./configure --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc=/usr/local --with-hepmc3=/usr/local  --with-tmdlib=/usr/local --with-lhapdf=/usr/local --with-zlib=/usr/local/opt/zlib --with-gsl=/usr/local --with-pythia8=/usr/local 
 
-cmake -S. -Bbuild -DCMAKE_INSTALL_PREFIX=$(pwd)/TESTINSTALLDIR
+cmake -S. -Bbuild -DCMAKE_INSTALL_PREFIX=$(pwd)/TESTINSTALLDIR -DPYTHIA8_ROOT_DIR=/usr/local
 make -j 2 -C build
 make install -C build
 
