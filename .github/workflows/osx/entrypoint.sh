@@ -48,7 +48,7 @@ cd ..
 wget https://tmdlib.hepforge.org/downloads/tmdlib-2.2.01.tar.gz
 tar zxfv tmdlib-2.2.01.tar.gz 
 cd tmdlib-2.2.01
-cp $(TOP)/tmdlib/matrix.h apfelxx/inc/apfel/matrix.h
+cp $TOP/tmdlib/matrix.h apfelxx/inc/apfel/matrix.h
 ./configure --with-lhapdf=/usr/local
 make -j 2 
 make install
