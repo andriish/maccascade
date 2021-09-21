@@ -63,7 +63,7 @@ cd ..
 ###########
 wget https://gitlab.cern.ch/hepmc/HepMC3/-/archive/3.2.4/HepMC3-3.2.4.tar.gz
 tar zxfv HepMC3-3.2.4.tar.gz
-cmake -SHepMC3-3.2.4 -BbuildHepMC3-3.2.4 -DHEPMC3_ENABLE_ROOT=OFF  -DCMAKE_INSTALL_PREFIX=/usr
+cmake -SHepMC3-3.2.4 -BbuildHepMC3-3.2.4 -DHEPMC3_ENABLE_ROOTIO=OFF  -DCMAKE_INSTALL_PREFIX=/usr
 make -j 2 -C buildHepMC3-3.2.4
 make install -C buildHepMC3-3.2.4
 cd ..
