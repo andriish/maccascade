@@ -54,11 +54,18 @@ make -j 2
 make install
 cd ..
 ###########
-wget https://gitlab.cern.ch/hepmc/HepMC/-/archive/2.06.11/HepMC-2.06.11.tar.gz
-tar zxfv HepMC-2.06.11.tar.gz
-cmake -SHepMC-2.06.11 -BbuildHepMC-2.06.11 -Dmomentum=GEV -Dlength=MM
-make -j 2 -C buildHepMC-2.06.11
-make install -C buildHepMC-2.06.11
+#wget https://gitlab.cern.ch/hepmc/HepMC/-/archive/2.06.11/HepMC-2.06.11.tar.gz
+#tar zxfv HepMC-2.06.11.tar.gz
+#cmake -SHepMC-2.06.11 -BbuildHepMC-2.06.11 -Dmomentum=GEV -Dlength=MM
+#make -j 2 -C buildHepMC-2.06.11
+#make install -C buildHepMC-2.06.11
+#cd ..
+###########
+wget https://gitlab.cern.ch/hepmc/HepMC/-/archive/3.2.4/HepMC3-3.2.4.tar.gz
+tar zxfv HepMC3-3.2.4.tar.gz
+cmake -SHepMC3-3.2.4 -BbuildHepMC3-3.2.4 -DHEPMC3_ENABLE_ROOT=OFF
+make -j 2 -C buildHepMC3-3.2.4
+make install -C buildHepMC3-3.2.4
 cd ..
 #############
 wget https://pythia.org/download/pythia82/pythia8243.tgz
@@ -72,7 +79,7 @@ cd ..
 brew install root
 git clone https://gitlab.cern.ch/averbyts/cascade
 cd cascade
-git checkout cmake
+git checkout hepmc3
 #autoreconf -fisv
 #this will enable hepmc3 only if it is present
 #./configure --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc=/usr/local --with-hepmc3=/usr/local  --with-tmdlib=/usr/local --with-lhapdf=/usr/local --with-zlib=/usr/local/opt/zlib --with-gsl=/usr/local --with-pythia8=/usr/local 
