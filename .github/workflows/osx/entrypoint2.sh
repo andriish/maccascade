@@ -61,7 +61,7 @@ cd ..
 #make install -C buildHepMC-2.06.11
 #cd ..
 ###########
-wget https://gitlab.cern.ch/hepmc/HepMC/-/archive/3.2.4/HepMC3-3.2.4.tar.gz
+wget https://gitlab.cern.ch/hepmc/HepMC3/-/archive/3.2.4/HepMC3-3.2.4.tar.gz
 tar zxfv HepMC3-3.2.4.tar.gz
 cmake -SHepMC3-3.2.4 -BbuildHepMC3-3.2.4 -DHEPMC3_ENABLE_ROOT=OFF
 make -j 2 -C buildHepMC3-3.2.4
@@ -84,7 +84,7 @@ git checkout hepmc3
 #this will enable hepmc3 only if it is present
 #./configure --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc=/usr/local --with-hepmc3=/usr/local  --with-tmdlib=/usr/local --with-lhapdf=/usr/local --with-zlib=/usr/local/opt/zlib --with-gsl=/usr/local --with-pythia8=/usr/local 
 
-cmake -S. -Bbuild -DCMAKE_INSTALL_PREFIX=$(pwd)/TESTINSTALLDIR -DPYTHIA8_ROOT_DIR=/usr/local
+cmake -S. -Bbuild -DCMAKE_INSTALL_PREFIX=$(pwd)/TESTINSTALLDIR -DPYTHIA8_DIR=/usr/local
 make -j 2 -C build
 make install -C build
 

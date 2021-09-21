@@ -61,7 +61,7 @@ cd ..
 #make install -C buildHepMC-2.06.11
 #cd ..
 ###########
-wget https://gitlab.cern.ch/hepmc/HepMC/-/archive/3.2.4/HepMC3-3.2.4.tar.gz
+wget https://gitlab.cern.ch/hepmc/HepMC3/-/archive/3.2.4/HepMC3-3.2.4.tar.gz
 tar zxfv HepMC3-3.2.4.tar.gz
 cmake -SHepMC3-3.2.4 -BbuildHepMC3-3.2.4 -DHEPMC3_ENABLE_ROOT=OFF
 make -j 2 -C buildHepMC3-3.2.4
