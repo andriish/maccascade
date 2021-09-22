@@ -37,6 +37,14 @@ else
 fi
 export CXXFLAGS=-std=c++14
 cp /usr/local/bin/gfortran-11 /usr/local/bin/gfortran
+###########
+wget https://gitlab.cern.ch/hepmc/HepMC3/-/archive/3.2.4/HepMC3-3.2.4.tar.gz
+tar zxfv HepMC3-3.2.4.tar.gz
+cmake -SHepMC3-3.2.4 -BbuildHepMC3-3.2.4 -DHEPMC3_ENABLE_ROOTIO=OFF  -DCMAKE_INSTALL_PREFIX=/usr
+make -j 2 -C buildHepMC3-3.2.4
+sudo make install -C buildHepMC3-3.2.4
+cd ..
+find /usr | grep HepMC3
 ########
 wget  https://www.hepforge.org/archive/lhapdf/LHAPDF-6.2.1.tar.gz
 tar zxvf LHAPDF-6.2.1.tar.gz
@@ -60,14 +68,6 @@ cd ..
 #make -j 2 -C buildHepMC-2.06.11
 #make install -C buildHepMC-2.06.11
 #cd ..
-###########
-wget https://gitlab.cern.ch/hepmc/HepMC3/-/archive/3.2.4/HepMC3-3.2.4.tar.gz
-tar zxfv HepMC3-3.2.4.tar.gz
-cmake -SHepMC3-3.2.4 -BbuildHepMC3-3.2.4 -DHEPMC3_ENABLE_ROOTIO=OFF  -DCMAKE_INSTALL_PREFIX=/usr
-make -j 2 -C buildHepMC3-3.2.4
-make install -C buildHepMC3-3.2.4
-cd ..
-find /usr | grep HepMC3
 #############
 wget https://pythia.org/download/pythia82/pythia8243.tgz
 tar zxfv pythia8243.tgz
@@ -85,7 +85,7 @@ git checkout hepmc3
 #this will enable hepmc3 only if it is present
 #./configure --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc=/usr/local --with-hepmc3=/usr/local  --with-tmdlib=/usr/local --with-lhapdf=/usr/local --with-zlib=/usr/local/opt/zlib --with-gsl=/usr/local --with-pythia8=/usr/local 
 
-cmake -S. -Bbuild -DCMAKE_INSTALL_PREFIX=$(pwd)/TESTINSTALLDIR -DPYTHIA8_DIR=/usr/local
+cmake -S. -Bbuild -DCMAKE_INSTALL_PREFIX=$(pwd)/TESTINSTALLDIR -DPYTHIA8_DIR=/usr/local -DHEPMC3_DIR=/usr -DHepMC3_DIR=/usr
 make -j 2 -C build
 make install -C build
 
