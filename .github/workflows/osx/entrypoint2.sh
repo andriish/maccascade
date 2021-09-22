@@ -40,7 +40,7 @@ cp /usr/local/bin/gfortran-11 /usr/local/bin/gfortran
 ###########
 wget https://gitlab.cern.ch/hepmc/HepMC3/-/archive/3.2.4/HepMC3-3.2.4.tar.gz
 tar zxfv HepMC3-3.2.4.tar.gz
-cmake -SHepMC3-3.2.4 -BbuildHepMC3-3.2.4 -DHEPMC3_ENABLE_ROOTIO=OFF  -DCMAKE_INSTALL_PREFIX=/usr -DHEPMC3_ENABLE_PYTHON:BOOL=OFF
+cmake -SHepMC3-3.2.4 -BbuildHepMC3-3.2.4 -DHEPMC3_ENABLE_ROOTIO=OFF  -DCMAKE_INSTALL_PREFIX=/usr/local -DHEPMC3_ENABLE_PYTHON:BOOL=OFF
 make -j 2 -C buildHepMC3-3.2.4
 sudo make install -C buildHepMC3-3.2.4
 cd ..
@@ -85,7 +85,7 @@ git checkout hepmc3
 #this will enable hepmc3 only if it is present
 #./configure --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc=/usr/local --with-hepmc3=/usr/local  --with-tmdlib=/usr/local --with-lhapdf=/usr/local --with-zlib=/usr/local/opt/zlib --with-gsl=/usr/local --with-pythia8=/usr/local 
 
-cmake -S. -Bbuild -DCMAKE_INSTALL_PREFIX=$(pwd)/TESTINSTALLDIR -DPYTHIA8_DIR=/usr/local -DHEPMC3_DIR=/usr -DHepMC3_DIR=/usr
+cmake -S. -Bbuild -DCMAKE_INSTALL_PREFIX=$(pwd)/TESTINSTALLDIR -DPYTHIA8_DIR=/usr/local -DHEPMC3_DIR=/usr/local -DHepMC3_DIR=/usr/local
 make -j 2 -C build
 make install -C build
 
