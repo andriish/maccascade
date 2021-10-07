@@ -81,6 +81,21 @@ make install LD=$LD
 TMDlib-getdata PB-NLO-HERAI+II-2018-set2
 cp TESTINSTALLDIR/share/cascade/LHE/POWHEG-example.lhe ./
 export HEPMCOUT=output.hepmc
+
+
+export DYLD_PRINT_LIBRARIES=1
+export DYLD_PRINT_LIBRARIES_POST_LAUNCH=1
+export DYLD_PRINT_RPATHS=1
+export HEPMCOUT=output.hepmc
+export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:$(pwd)/TESTINSTALLDIR/lib
+ls -lah TESTINSTALLDIR/bin/cascade
+xattr TESTINSTALLDIR/bin/cascade
+otool -L  TESTINSTALLDIR/bin/cascade
+
+
+
+
+
 TESTINSTALLDIR/bin/cascade < TESTINSTALLDIR//share/cascade/LHE/steering-DY-PH.txt
 head -n 40 output.hepmc*
 
