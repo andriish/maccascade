@@ -75,7 +75,7 @@ cd cascade
 git checkout hepmc3
 autoreconf -fisv
 #this will enable hepmc3 only if it is present
-./configure --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc=/usr/local --with-hepmc3=/usr/local  --with-tmdlib=/usr/local --with-lhapdf=/usr/local --with-zlib=/usr/local/opt/zlib --with-gsl=/usr/local --with-pythia8=/usr/local 
+./configure --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc2=/usr/local --with-hepmc3=/usr/local  --with-tmdlib=/usr/local --with-lhapdf=/usr/local --with-zlib=/usr/local/opt/zlib --with-gsl=/usr/local --with-pythia8=/usr/local 
 make -j 2 LD=$LD
 make install LD=$LD
 TMDlib-getdata PB-NLO-HERAI+II-2018-set2
