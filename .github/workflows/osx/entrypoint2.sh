@@ -80,7 +80,7 @@ cd ..
 brew install root
 git clone https://gitlab.cern.ch/averbyts/cascade
 cd cascade
-git checkout hepmc3
+git checkout master
 #autoreconf -fisv
 #this will enable hepmc3 only if it is present
 #./configure --prefix=$(pwd)/TESTINSTALLDIR --with-hepmc=/usr/local --with-hepmc3=/usr/local  --with-tmdlib=/usr/local --with-lhapdf=/usr/local --with-zlib=/usr/local/opt/zlib --with-gsl=/usr/local --with-pythia8=/usr/local 
